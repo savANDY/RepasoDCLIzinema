@@ -54,17 +54,22 @@ and open the template in the editor.
                 <form id="formucompra">
                     <fieldset>
                         <legend>COMPRA DE ENTRADAS PARA LA SESION</legend>
-                        <label for="numentradas">NUMERO DE ENTRADAS</label> <input id="numeroent" name="numeroent" type="text" required >
-                        <label for="tipo">TIPO DE ENTRADA</label>           <select name="tipo" id="tipo" >
-                                                                                <option value="8" selected>Normal
-                                                                                <option value="5" >Bono descuento
-                                                                            </select>
+
+                        <label for="numentradas">NUMERO DE ENTRADAS</label>
+                        <input id="numeroent" name="numeroent" type="text" required onkeyup="comprarEntradas();" />
+
+                        <label for="tipo">TIPO DE ENTRADA</label>
+                        <select name="tipo" id="tipo" onchange="comprarEntradas();">
+                                      <option value="8" selected>Normal
+                                      <option value="5" >Bono descuento
+                        </select>
+
                         <label for="precio">PRECIO DE LAS ENTRADAS</label>  <input id="precio" name="precio" type="text" disabled>
                     </fieldset>
 
                     <fieldset>
                         <label for="total">TOTAL A PAGAR</label>            <input id="total" name="total" type="text" >
-                        <button id="botonComprar" type="button" name="nada" onclick("comprarEntradas(name)") >COMPRAR</button>
+                        <button id="botonComprar" type="button" name="nada" onclick="restarButacas(name);">COMPRAR</button>
                     </fieldset>
                 </form>
             </div>
